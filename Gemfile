@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'better_errors'
 gem 'haml-rails'
 gem 'httparty'
+gem 'unicorn'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
