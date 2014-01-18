@@ -24,4 +24,12 @@ class Clip < ActiveRecord::Base
   def series
     data["values"].collect {|tuple| tuple[1].to_i }
   end
+
+  def name
+    if @name.nil?
+      @name = JSON.parse(HTTParty.get(url, :headers => {'Accept' => 'application/json'}).body)["name"]
+    end
+
+    @name
+  end
 end

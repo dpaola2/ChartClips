@@ -16,7 +16,7 @@
   $(function() {
     new Highcharts.Chart({
       chart: { renderTo: 'chart', type: 'column' },
-      title: { text: 'ChartClip' },
+      title: { text: '#{@clip.name}' },
       xAxis: { categories: #{@clip.labels}, title: { text: '#{@clip.fields[0]}' } },
       yAxis: { title: { text: '#{@clip.fields[1] }' } },
       series: [{
