@@ -12,4 +12,16 @@ class Clip < ActiveRecord::Base
     # XXX we're assuming everything is JSON, so anything else will break
     @data
   end
+
+  def fields
+    data["fields"]
+  end
+
+  def labels
+    data["values"].collect {|tuple| tuple[0] }
+  end
+
+  def series
+    data["values"].collect {|tuple| tuple[1].to_i }
+  end
 end

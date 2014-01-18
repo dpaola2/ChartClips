@@ -17,10 +17,10 @@
     new Highcharts.Chart({
       chart: { renderTo: 'chart', type: 'column' },
       title: { text: 'ChartClip' },
-      xAxis: { title: { text: '#{@clip.data["fields"][0] }' } },
-      yAxis: { title: { text: '#{@clip.data["fields"][1] }' } },
+      xAxis: { categories: #{@clip.labels}, title: { text: '#{@clip.fields[0]}' } },
+      yAxis: { title: { text: '#{@clip.fields[1] }' } },
       series: [{
-        data: #{@clip.data["values"].collect {|tuple| [tuple.first, tuple.second.to_i] } }
+        data: #{@clip.series}
       }]
     });
   })
