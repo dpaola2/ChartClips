@@ -1,0 +1,8 @@
+common: &common
+  adapter: postgresql
+  username: admin
+  host: localhost
+
+development:
+  <<: *common
+  database: chartclips_development

@@ -1,0 +1,26 @@
+= javascript_include_tag "http://code.highcharts.com/highcharts.js"
+
+%p#notice= notice
+
+%p
+  %b Url:
+  = link_to @clip.url, @clip.url
+
+= link_to 'Edit', edit_clip_path(@clip)
+\|
+= link_to 'Back', clips_path
+
+#chart
+
+:javascript
+  $(function() {
+    new Highcharts.Chart({
+      chart: { renderTo: 'chart', type: 'column' },
+      title: { text: 'ChartClip' },
+      xAxis: { title: { text: '#{@clip.data["fields"][0] }' } },
+      yAxis: { title: { text: '#{@clip.data["fields"][1] }' } },
+      series: [{
+        data: #{@clip.data["values"].collect {|tuple| [tuple.first, tuple.second.to_i] } }
+      }]
+    });
+  })
