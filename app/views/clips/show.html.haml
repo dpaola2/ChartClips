@@ -3,12 +3,8 @@
 %p#notice= notice
 
 %p
-  %b Url:
   = link_to @clip.url, @clip.url
-
-= link_to 'Edit', edit_clip_path(@clip)
-\|
-= link_to 'Back', clips_path
+  = link_to 'Edit', edit_clip_path(@clip), :class => "btn btn-info"
 
 #chart
 

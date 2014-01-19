@@ -7,7 +7,6 @@
           %li= msg
 
   .field
-    = f.label :url
-    = f.text_field :url
+    = f.text_field :url, :placeholder => "dataclips URL"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', :class => "btn btn-success"
