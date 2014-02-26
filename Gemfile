@@ -11,6 +11,7 @@ gem 'haml-rails'
 gem 'httparty'
 gem 'unicorn'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'devise'
 
 group :develoment do
   gem 'better_errors'
